@@ -3,6 +3,23 @@
 <robot name="my_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
   
   <xacro:include filename="$(find my_robot)/urdf/my_robot.gazebo" />
+  <xacro:include filename="$(find my_robot)/urdf/materials.xacro" />
+
+  <gazebo reference = 'chassis'>
+    <material> Gazebo/Indigo </material>
+  </gazebo>
+
+  <gazebo reference = 'left_wheel'>
+    <material> Gazebo/Yellow </material>
+  </gazebo>
+
+  <gazebo reference = 'right_wheel'>
+    <material> Gazebo/Yellow </material>
+  </gazebo>
+
+  <gazebo reference = 'camera'>
+    <material> Gazebo/Green </material>
+  </gazebo>
 
   <link name="robot_footprint"></link>
 
@@ -28,43 +45,44 @@
     <collision name='collision'>
       <origin xyz="0 0 0" rpy=" 0 0 0"/> 
       <geometry>
-        <box size=".4 .2 .1"/>
+        <box size=".4 .3 .175"/>
       </geometry>
     </collision>
 
     <visual name='chassis_visual'>
       <origin xyz="0 0 0" rpy=" 0 0 0"/>
       <geometry>
-        <box size=".4 .2 .1"/>
+        <box size=".4 .3 .175"/>
       </geometry>
+    <material name="indigo"/>
     </visual>
 
 
     <collision name='back_caster_collision'>
-      <origin xyz="-0.15 0 -0.05" rpy=" 0 0 0"/>
+      <origin xyz="-0.125 0 -0.075" rpy=" 0 0 0"/>
       <geometry>
-        <sphere radius="0.0499"/>
+        <sphere radius="0.07499"/>
       </geometry>
     </collision>
 
     <visual name='back_caster_visual'>
-      <origin xyz="-0.15 0 -0.05" rpy=" 0 0 0"/>
+      <origin xyz="-0.125 0 -0.075" rpy=" 0 0 0"/>
       <geometry>
-        <sphere radius="0.05"/>
+        <sphere radius="0.075"/>
       </geometry>
     </visual>
 
     <collision name='front_caster_collision'>
-      <origin xyz="0.15 0 -0.05" rpy=" 0 0 0"/>
+      <origin xyz="0.125 0 -0.075" rpy=" 0 0 0"/>
       <geometry>
-        <sphere radius="0.0499"/>
+        <sphere radius="0.07499"/>
       </geometry>
     </collision>
 
     <visual name='front_caster_visual'>
-      <origin xyz="0.15 0 -0.05" rpy=" 0 0 0"/>
+      <origin xyz="0.125 0 -0.075" rpy=" 0 0 0"/>
       <geometry>
-        <sphere radius="0.05"/>
+        <sphere radius="0.075"/>
       </geometry>
     </visual>
 
@@ -84,21 +102,22 @@
     <collision name='left_wheel_collision'>
        <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/> 
        <geometry>
-         <cylinder length="0.05" radius="0.1"/>
+         <cylinder length="0.07" radius="0.15"/>
        </geometry>
     </collision>
 
     <visual name='left_wheel_visual'>
       <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/> 
       <geometry>
-        <cylinder length="0.05" radius="0.1"/>
+        <cylinder length="0.07" radius="0.15"/>
       </geometry>
+    <material name="yellow"/>
     </visual>
 
   </link>
 
   <joint type="continuous" name="left_wheel_hinge">
-    <origin xyz="0 0.15 0" rpy="0 0 0"/>
+    <origin xyz="0 0.25 0" rpy="0 0 0"/>
     <child link="left_wheel"/>
     <parent link="chassis"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
@@ -107,7 +126,7 @@
   </joint> 
 
 
-  <link name='rigth_wheel'>
+  <link name='right_wheel'>
    <inertial>
       <mass value="5.0"/>
       <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
@@ -121,22 +140,23 @@
     <collision name='right_wheel_collision'>
        <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/> 
        <geometry>
-         <cylinder length="0.05" radius="0.1"/>
+         <cylinder length="0.07" radius="0.15"/>
        </geometry>
     </collision>
 
     <visual name='right_wheel_visual'>
       <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/> 
       <geometry>
-        <cylinder length="0.05" radius="0.1"/>
+        <cylinder length="0.07" radius="0.15"/>
       </geometry>
+    <material name="yellow"/>
     </visual>
 
   </link>
 
   <joint type="continuous" name="right_wheel_hinge">
-    <origin xyz="0 -0.15 0" rpy="0 0 0"/>
-    <child link="rigth_wheel"/>
+    <origin xyz="0 -0.25 0" rpy="0 0 0"/>
+    <child link="right_wheel"/>
     <parent link="chassis"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
     <limit effort="10000" velocity="1000"/>
@@ -166,6 +186,7 @@
       <geometry>
         <box size="0.05 0.05 0.05"/>
       </geometry>
+    <material name="green"/>
     </visual>
 
   </link>
