@@ -42,17 +42,17 @@
       />
     </inertial>
 
-    <collision name='collision'>
+    <collision name='chassis_collision'>
       <origin xyz="0 0 0" rpy=" 0 0 0"/> 
       <geometry>
-        <box size=".4 .3 .175"/>
+        <box size=".4 .3 .17"/>
       </geometry>
     </collision>
 
     <visual name='chassis_visual'>
       <origin xyz="0 0 0" rpy=" 0 0 0"/>
       <geometry>
-        <box size=".4 .3 .175"/>
+        <box size=".4 .3 .17"/>
       </geometry>
     <material name="indigo"/>
     </visual>
@@ -61,7 +61,7 @@
     <collision name='back_caster_collision'>
       <origin xyz="-0.125 0 -0.075" rpy=" 0 0 0"/>
       <geometry>
-        <sphere radius="0.07499"/>
+        <sphere radius="0.0749"/>
       </geometry>
     </collision>
 
@@ -75,7 +75,7 @@
     <collision name='front_caster_collision'>
       <origin xyz="0.125 0 -0.075" rpy=" 0 0 0"/>
       <geometry>
-        <sphere radius="0.07499"/>
+        <sphere radius="0.0749"/>
       </geometry>
     </collision>
 
