@@ -45,42 +45,42 @@
     <collision name='chassis_collision'>
       <origin xyz="0 0 0" rpy=" 0 0 0"/> 
       <geometry>
-        <box size=".4 .3 .17"/>
+        <box size=".6 .3 .17"/>
       </geometry>
     </collision>
 
     <visual name='chassis_visual'>
       <origin xyz="0 0 0" rpy=" 0 0 0"/>
       <geometry>
-        <box size=".4 .3 .17"/>
+        <box size=".6 .3 .17"/>
       </geometry>
     <material name="indigo"/>
     </visual>
 
 
     <collision name='back_caster_collision'>
-      <origin xyz="-0.125 0 -0.075" rpy=" 0 0 0"/>
+      <origin xyz="-0.225 0 -0.075" rpy=" 0 0 0"/>
       <geometry>
         <sphere radius="0.0749"/>
       </geometry>
     </collision>
 
     <visual name='back_caster_visual'>
-      <origin xyz="-0.125 0 -0.075" rpy=" 0 0 0"/>
+      <origin xyz="-0.225 0 -0.075" rpy=" 0 0 0"/>
       <geometry>
         <sphere radius="0.075"/>
       </geometry>
     </visual>
 
     <collision name='front_caster_collision'>
-      <origin xyz="0.125 0 -0.075" rpy=" 0 0 0"/>
+      <origin xyz="0.225 0 -0.075" rpy=" 0 0 0"/>
       <geometry>
         <sphere radius="0.0749"/>
       </geometry>
     </collision>
 
     <visual name='front_caster_visual'>
-      <origin xyz="0.125 0 -0.075" rpy=" 0 0 0"/>
+      <origin xyz="0.225 0 -0.075" rpy=" 0 0 0"/>
       <geometry>
         <sphere radius="0.075"/>
       </geometry>
@@ -102,14 +102,14 @@
     <collision name='left_wheel_collision'>
        <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/> 
        <geometry>
-         <cylinder length="0.07" radius="0.15"/>
+         <cylinder length="0.075" radius="0.15"/>
        </geometry>
     </collision>
 
     <visual name='left_wheel_visual'>
       <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/> 
       <geometry>
-        <cylinder length="0.07" radius="0.15"/>
+        <cylinder length="0.075" radius="0.15"/>
       </geometry>
     <material name="yellow"/>
     </visual>
@@ -140,14 +140,14 @@
     <collision name='right_wheel_collision'>
        <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/> 
        <geometry>
-         <cylinder length="0.07" radius="0.15"/>
+         <cylinder length="0.075" radius="0.15"/>
        </geometry>
     </collision>
 
     <visual name='right_wheel_visual'>
       <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/> 
       <geometry>
-        <cylinder length="0.07" radius="0.15"/>
+        <cylinder length="0.075" radius="0.15"/>
       </geometry>
     <material name="yellow"/>
     </visual>
@@ -192,7 +192,7 @@
   </link>
 
   <joint name="camera_joint" type="fixed">
-	<origin xyz="0.2 0 0" rpy="0 0 0" />
+	<origin xyz="0.3 0 0" rpy="0 0 0" />
 	<child link="camera" />
 	<parent link="chassis" />
 	<axis xyz="0 1 0" />
@@ -226,7 +226,7 @@
   </link>
 
   <joint name="hokuyo" type="fixed">
-	<origin xyz="0.15 0 0.1" rpy="0 0 0" />
+	<origin xyz="0.25 0 0.15" rpy="0 0 0" />
 	<child link="hokuyo" />
 	<parent link="chassis" />
         <axis xyz="0 1 0" />
