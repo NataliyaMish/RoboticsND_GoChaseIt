@@ -203,9 +203,9 @@ target_link_libraries(drive_bot ${catkin_LIBRARIES})
 add_dependencies(drive_bot ball_chaser_generate_messages_cpp)
 
 
-#add_executable(arm_mover src/arm_mover.cpp)
-#target_link_libraries(arm_mover ${catkin_LIBRARIES})
-#add_dependencies(arm_mover simple_arm_generate_messages_cpp)
+add_executable(process_image src/process_image.cpp)
+target_link_libraries(process_image ${catkin_LIBRARIES})
+add_dependencies(process_image ball_chaser_generate_messages_cpp)
 
 #add_executable(look_away src/look_away.cpp)
 #target_link_libraries(look_away ${catkin_LIBRARIES})
