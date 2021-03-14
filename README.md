@@ -10,8 +10,8 @@ It includes two ROS packages:
 
 #### Create a catkin_ws
 ```sh
-$ cd /home/workspace/
-$ mkdir -p /home/workspace/catkin_ws/src/
+$ cd /home/
+$ mkdir -p /home/catkin_ws/src/
 $ cd catkin_ws/src/
 $ catkin_init_workspace
 $ cd ..
@@ -19,19 +19,19 @@ $ cd ..
 
 #### Clone the packages in catkin_ws/src/
 ```sh
-$ cd /home/workspace/catkin_ws/src/
+$ cd /home/catkin_ws/src/
 $ git clone https://github.com/NataliyaMish/RoboticsND_GoChaseIt.git master
 ```
 
 #### Build the packages
 ```sh
-$ cd /home/workspace/catkin_ws/ 
+$ cd /home/catkin_ws/ 
 $ catkin_make
 ```
 
 #### After building the packages, source your environment
 ```sh
-$ cd /home/workspace/catkin_ws/
+$ cd /home/catkin_ws/
 $ source devel/setup.bash
 ```
 
